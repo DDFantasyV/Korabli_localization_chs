@@ -4,8 +4,8 @@
 如在使用汉化包的游玩过程中发现游戏内存在文本错误，请向作者反馈，谢谢您的帮助。
 
 ## 特别鸣谢 (以下排名不分先后)
-自动安装包作者`[REPAD]DDF_FantasyV`
-群友`[RUCAT]Mochidzuki`
+自动安装包作者:`[REPAD]DDF_FantasyV`
+提供过帮助的群友:`[RUCAT]Mochidzuki`
 
 ## Statement 声明
 **此项目仅用于学习交流，请勿用于非法用途。**
