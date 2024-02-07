@@ -1,4 +1,3 @@
-# Korabli_localization_chs
 # 战舰世界俄服本土化（汉化）
 >本汉化包由B站UP主`年糕特工队`和`walksQAQ`共同制作。
 
