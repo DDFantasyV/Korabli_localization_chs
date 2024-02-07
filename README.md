@@ -7,10 +7,17 @@
 **此项目仅用于学习交流，请勿用于非法用途。**
 
 ## Instruction 使用说明
-1. 找到游戏安装的根目录，其文件名通常为`World_of_Warships`或是 `Korabli`
-2. 打开游戏根目录下的`bin`文件夹，找到里面**数字最大的文件夹**并打开
-3. 打开目录下的`res_mod`文件夹，将`texts`文件夹和`locale_config.xml`直接拖入，如提示是否覆盖请选择`是`
+### Automatic installation 自动安装
+1. 下载并打开`Korabli_chs_Setup.msi`，并授权管理员权限
+2. 手动选择游戏目录，标准格式为`你的游戏目录/bin/数字最大的文件夹/res_mod`
+3. 点击下一步继续安装
 4. 安装完成！
+### Manual installation 手动安装
+1. 下载压缩包文件或者`git clone`
+2. 找到游戏安装的根目录，其文件名通常为`World_of_Warships`或是 `Korabli`
+3. 打开游戏根目录下的`bin`文件夹，找到里面**数字最大的文件夹**并打开
+4. 打开目录下的`res_mod`文件夹，将`texts`文件夹和`locale_config.xml`直接拖入，如提示是否覆盖请选择`是`
+5. 安装完成！
 ## Update log 更新日志
 2024.01.20 for Lesta服13.0版本 `v1.1.5`
 * 新增了部分文本，以适配港口资源显示mod
