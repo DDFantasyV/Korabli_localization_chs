@@ -15,7 +15,7 @@
 5. 安装完成！
 
 ### Automatic installation 自动安装
-1. 下载并打开`Korabli_chs_Setup.msi`，并授权管理员权限
+1. 下载并打开`Korabli_chs_Setup.exe`，并授权管理员权限
 2. 手动选择游戏目录，标准格式为`你的游戏目录/bin/数字最大的文件夹/res_mod`
 3. 点击下一步继续安装
 4. 安装完成！
