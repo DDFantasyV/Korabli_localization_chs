@@ -1,27 +1,27 @@
 # 战舰世界俄服本土化（汉化）
->本汉化包由B站UP主`年糕特工队`和`walksQAQ`共同制作。
+>本汉化包由B站UP主`年糕特工队`、`walksQAQ`和`Mochidzuki`共同制作，`DDF_FantasyV`负责自动安装包以及本项目仓库的管理。
 
-如在使用汉化包的游玩过程中发现游戏内存在文本错误，请向作者反馈，谢谢您的帮助。
-
-## 特别鸣谢 (以下排名不分先后)
-自动安装包作者:`[REPAD]DDF_FantasyV`
-提供过帮助的群友:`[RUCAT]Mochidzuki`
+如在使用汉化包的游玩过程中发现游戏内存在文本错误，请向我们反馈，谢谢您的帮助。
 
 ## Statement 声明
-**此项目仅用于学习交流，请勿用于非法用途。**
+**此项目根据 *Apache License 2.0* 开源，仅用于学习交流，请勿用于非法用途。**
 
 ## Instruction 使用说明
-### Automatic installation 自动安装
-1. 下载并打开`Korabli_chs_Setup.msi`，并授权管理员权限
+### Automatic installation 自动安装 *Recommended 推荐！*
+1. 下载并打开`Korabli_chs_Setup.exe`，并授权管理员权限
 2. 手动选择游戏目录，标准格式为`你的游戏目录/bin/数字最大的文件夹/res_mod`
 3. 点击下一步继续安装
 4. 安装完成！
+
 ### Manual installation 手动安装
 1. 下载压缩包文件或者`git clone`
 2. 找到游戏安装的根目录，其文件名通常为`World_of_Warships`或是 `Korabli`
 3. 打开游戏根目录下的`bin`文件夹，找到里面**数字最大的文件夹**并打开
 4. 打开目录下的`res_mod`文件夹，将`texts`文件夹和`locale_config.xml`直接拖入，如提示是否覆盖请选择`是`
 5. 安装完成！
+
+### Uninstallation 卸载
+打开`控制面板 > 程序 > 卸载程序`,右键本汉化包执行卸载。
 
 ## Update log 更新日志
 2024.02.25 for Lesta服13.2版本PT2 `v0.13.2-pre.240225`
@@ -31,6 +31,9 @@
 2024.02.25 for Lesta服13.1版本 `v0.13.1.240225`
 * 对部分文本进行了调整
 * 现在军团战相关消息会正确显示服务器了
+
+2024.02.23 for Lesta服13.2版本PT2 `v0.13.2-pre.240223`
+* 修复了部分存在问题的文本
 
 2024.02.22 for Lesta服13.2版本PT1 `v0.13.2-pre.240222`
 * 适配了13.2PT1版本客户端
