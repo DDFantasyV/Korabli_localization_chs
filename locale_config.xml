@@ -5,7 +5,7 @@
     <!-- acceptLang is comma delimited ordered list of language codes without any whitespace that will be used in the "Accept-Language" HTTP header. -->
 
     <lang_mapping>
-        <lang acceptLang="ru" egs="ru" fonts="RU" full="schinese" languageBar="false" localeRfcName="zh-sg" short="zh-sg"/>
+        <lang acceptLang="ru" egs="ru" fonts="CN" full="schinese" languageBar="false" localeRfcName="zh-sg" short="zh_sg"/>
         <lang acceptLang="en" egs="en-US" fonts="EU" full="english" languageBar="false" localeRfcName="en" short="en"/>
         <lang acceptLang="de,en" egs="de" fonts="EU" full="german" languageBar="false" localeRfcName="de" short="de"/>
         <lang acceptLang="pl,en" egs="pl" fonts="EU" full="polish" languageBar="false" localeRfcName="pl" short="pl"/>
