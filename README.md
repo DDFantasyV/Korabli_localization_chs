@@ -8,7 +8,7 @@
 
 ## Instruction 使用说明
 ### Automatic installation 自动安装 *Recommended 推荐！*
-**PT客户端暂不支持本安装方式**
+**PT客户端版本暂不支持本安装方式**
 1. 下载并打开`Korabli_chs_Setup.exe`，并授权管理员权限
 2. 手动选择游戏目录，标准格式为`你的游戏目录/bin/数字最大的文件夹/res_mod`
 3. 点击下一步继续安装
