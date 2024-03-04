@@ -1,28 +1,10 @@
 <locale_config>
-    <locale_id>en</locale_id>
+    <locale_id>ru</locale_id>
     <text_path>../res/texts</text_path>
     <text_domain>global</text_domain>
     <!-- acceptLang is comma delimited ordered list of language codes without any whitespace that will be used in the "Accept-Language" HTTP header. -->
 
     <lang_mapping>
-        <lang acceptLang="ru" egs="ru" fonts="CN" full="schinese" languageBar="false" localeRfcName="zh-sg" short="zh_sg"/>
-        <lang acceptLang="en" egs="en-US" fonts="EU" full="english" languageBar="false" localeRfcName="en" short="en"/>
-        <lang acceptLang="de,en" egs="de" fonts="EU" full="german" languageBar="false" localeRfcName="de" short="de"/>
-        <lang acceptLang="pl,en" egs="pl" fonts="EU" full="polish" languageBar="false" localeRfcName="pl" short="pl"/>
-        <lang acceptLang="fr,en" egs="fr" fonts="EU" full="french" languageBar="false" localeRfcName="fr" short="fr"/>
-        <lang acceptLang="es,en" egs="es-ES" fonts="EU" full="spanish" languageBar="false" localeRfcName="es" short="es"/>
-        <lang acceptLang="cs,en" egs="" fonts="EU" full="czech" languageBar="false" localeRfcName="cs" short="cs"/>
-        <lang acceptLang="tr,en" egs="tr" fonts="EU" full="turkish" languageBar="false" localeRfcName="tr" short="tr"/>
-        <lang acceptLang="it,en" egs="it" fonts="EU" full="italian" languageBar="false" localeRfcName="it" short="it"/>
-        <lang acceptLang="ja,en" egs="ja" fonts="ASIA" full="japanese" languageBar="false" localeRfcName="ja" short="ja"/>
-        <lang acceptLang="zh-Tw,en" egs="zh-Hant" fonts="CN" full="tchinese" languageBar="true" localeRfcName="zh-tw" short="zh_tw"/>
-        <lang acceptLang="th,en" egs="th" fonts="TH" full="thai" languageBar="false" localeRfcName="th" short="th"/>
-        <lang acceptLang="ko,en" egs="ko" fonts="KO" full="koreana" languageBar="false" localeRfcName="ko" short="ko"/>
-        <lang acceptLang="zh-Sg,en" egs="zh-Hans" fonts="CN" full="schinese" languageBar="true" localeRfcName="zh-sg" short="zh_sg"/>
-        <lang acceptLang="zh-Cn,en" egs="" fonts="CN" full="schinese_kong" languageBar="true" localeRfcName="zh-cn" short="zh_cn"/>
-        <lang acceptLang="pt-Br,pt,en" egs="pt-BR" fonts="EU" full="brazilian" languageBar="false" localeRfcName="pt-br" short="pt_br"/>
-        <lang acceptLang="uk,ru,en" egs="" fonts="RU" full="ukrainian" languageBar="false" localeRfcName="uk" short="uk"/>
-        <lang acceptLang="es-Mx,es,en" egs="es-MX" fonts="EU" full="latam" languageBar="false" localeRfcName="es-mx" short="es_mx"/>
-        <lang acceptLang="nl,en" egs="" fonts="EU" full="dutch" languageBar="false" localeRfcName="nl" short="nl"/>
+        <lang acceptLang="ru" egs="ru" fonts="CN" full="schinese" languageBar="false" localeRfcName="ru" short="ru"/>
     </lang_mapping>
 </locale_config>
