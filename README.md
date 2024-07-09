@@ -14,7 +14,7 @@
 3. 点击下一步继续安装
 4. 安装完成！
 
-### Manual installation 手动安装
+### Manual installation 手动安装 *由于目录文件变动，该方法不推荐使用！*
 1. 下载压缩包文件或者`git clone`
 2. 找到游戏安装的根目录，其文件名通常为`World_of_Warships`或是`Korabli`
 3. 打开游戏根目录下的`bin`文件夹，找到里面**数字最大的文件夹**并打开
