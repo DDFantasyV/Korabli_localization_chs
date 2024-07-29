@@ -10,7 +10,7 @@ If you find any text errors in the game while using the localization, please sen
 ## Instruction
 ### Automatic installation *Recommended!*
 1. Download and open `Korabli_chs_Setup.exe`,and authorize administrator privileges.
-2. Manually select game directory, normally it is`$YOUR_GAME$/bin/$HIGHEST_NUM$/res_mod`.
+2. Manually select game directory, normally it is`$YOUR_GAME$/bin/$LARGEST_NUM$/res_mod`.
 3. Click Next to continue installation.
 4. Completed!
 
@@ -18,7 +18,7 @@ If you find any text errors in the game while using the localization, please sen
 *Due to changes in the directory file, this method is no longer recommended!*
 1. Download zip file or`git clone`.
 2. Find the root directory of your game, which is normally named`World_of_Warships` or `Korabli`.
-3. Open the `bin` folder in the root directory of your game. Find the folder with **Highest Number** inside and open it.
+3. Open the `bin` folder in the root directory of your game. Find the folder with **Largest Number** inside and open it.
 4. Open the `res_mod` folder in the directory, and drag the `texts` folder and `locale_config.xml`into it. If prompted to overwrite, please select `Yes`.
 5. Completed!
 
