@@ -1,0 +1,50 @@
+# Мир кораблей [World of Warships RU] Localization (Chinese)
+>This project is developed by Bilibili UP`年糕特工队`,`DDF_FantasyV`,`Mochidzuki`and`walksQAQ`.
+
+**Please carefully read the following instructions and Q&A before installation!**<br>
+If you find any text errors in the game while using the localization, please send feedbacks or issues to us. Thanks for your help.
+
+## Statement
+**This project is open source under *Apache License 2.0* and is only for learning and communication purposes. Please do not use it for illegal purposes.**
+
+## Instruction
+### Automatic installation *Recommended!*
+1. Download and open `Korabli_chs_Setup.exe`,and authorize administrator privileges.
+2. Manually select game directory, normally it is`$YOUR_GAME$/bin/$HIGHEST_NUM$/res_mod`.
+3. Click Next to continue installation.
+4. Completed!
+
+### Automatic installation
+*Due to changes in the directory file, this method is no longer recommended!*
+1. Download zip file or`git clone`.
+2. Find the root directory of your game, which is normally named`World_of_Warships` or `Korabli`.
+3. Open the `bin` folder in the root directory of your game. Find the folder with **Highest Number** inside and open it.
+4. Open the `res_mod` folder in the directory, and drag the `texts` folder and `locale_config.xml`into it. If prompted to overwrite, please select `Yes`.
+5. Completed!
+
+### Uninstallation
+Open `Control Panel > Application > Uninstall a program`, just click on the localization to uninstall.
+
+## Question & Answer
+***
+Q.Why hasn't the game changed to Chinese GUI even after installing the localization?<br>
+A.Check if the following contents are correct: `Installation directory`、`Game and Localization version`.<br>
+**The in-game browser content such as Armory and questionnaire surveys will still be displayed in Russian.**<br>
+**Meanwhile, if the game has already preloaded updates, please install the localization in the folder with the second-largest number**<br>
+If the above measures are ineffective, please provide feedback in the issue or QQ group.
+***
+Q.Why do errors still occur in the game even after installing the localization package?<br>
+A.Check if the following contents are correct: `Installation directory`、`Game and Localization version`、`Mods conflict`.<br>
+If the above measures are ineffective, please provide feedback in the issue or QQ group.
+***
+Q.What should I do if antivirus software prompts for a virus?<br>
+A.This is a false alarm from antivirus software. Choose options such as `Trust` or `Keep` to continue installing.
+***
+
+## To do
+- [ ] Detect game directory automatically
+- [x] Translation
+- [x] Readme
+- [x] Self-unzip
+
+如有不准确处，以中文版本README为准。
