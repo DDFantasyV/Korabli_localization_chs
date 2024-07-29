@@ -26,7 +26,8 @@ If you find any text errors in the game while using the localization, please sen
 Open `Control Panel > Application > Uninstall a program`, just click on the localization to uninstall.
 
 ## Question & Answer
-***
+>Before asking any questions, please ensure that you have read [How To Ask Questions The Smart Way](https://www.catb.org/~esr/faqs/smart-questions.html)
+
 Q.Why hasn't the game changed to Chinese GUI even after installing the localization?<br>
 A.Check if the following contents are correct: `Installation directory`、`Game and Localization version`.<br>
 **The in-game browser content such as Armory and questionnaire surveys will still be displayed in Russian.**<br>
