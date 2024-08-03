@@ -8,7 +8,30 @@
 ## 声明
 **此项目根据 *Apache License 2.0* 开源，仅用于学习交流，请勿用于非法用途。**
 
-## 使用说明
+## 安装教程
+以下提供三种安装方式，使用其中一种即可，请按需选用。
+### 安装器安装 *推荐！*
+>   安装器技术支持与维护由[MFunction96](https://github.com/MFunction96)友情提供。
+
+无论Github还是Gitee，均转去最新发布下载即可，或访问以下链接以下载安装包含.NET 8运行环境的安装包：
+
+- Github: https://github.com/MFunction96/KorabliChsMod/releases/latest/download/KorabliChsModInstallerWithRuntime.exe
+
+> 如果确定本地已安装.NET 8运行环境，可选择以下安装包：
+>
+> - Github: https://github.com/MFunction96/KorabliChsMod/releases/latest/download/KorabliChsModInstaller.exe
+
+按照安装说明及提示完成安装即可，默认安装位置为：`%AppData%\KorabliChsMod`，即`C:\Users\<用户名>\AppData\Roaming\KorabliChsMod`，安装过程中会自动在桌面创建快捷方式。
+
+打开桌面快捷方式，进入程序。
+
+1. 选择正确的游戏客户端安装的位置。
+2. 点击`安装`，等待片刻即可完成。**无论检测到汉化安装与否，程序均会安装/覆盖安装最新版本的汉化补丁至指定客户端**。
+
+![主程序](https://dev.azure.com/XanaCN/f06af8ee-5084-455c-ac24-8fc4f735382c/_apis/git/repositories/d36405a6-bc74-45e3-b720-3a2c79f5c30e/items?path=/doc/README/MainWindow.png)
+
+> 目前正在紧锣密鼓地开发客户端自动搜索功能，敬请期待。
+
 ### 自动安装 *推荐！*
 1. 下载并打开`Korabli_chs_Setup.exe`，并授权管理员权限
 2. 手动选择游戏目录，标准格式为`你的游戏目录/bin/数字最大的文件夹/res_mod`
@@ -41,9 +64,14 @@ A.检查以下内容是否正确：`安装目录`、`游戏及汉化版本`、`�
 Q.杀毒软件提示有病毒，我应该怎么办？<br>
 A.杀毒软件误报，选择`信任程序`或者`保留`等选项继续安装。
 ***
+Q.我使用安装器时出现了问题，应该怎么办？<br>
+A.安装器相关问题请在KorabliChsMod的[issue](https://github.com/MFunction96/KorabliChsMod/issues)下进行反馈.
 
 ## 待实现功能
 - [ ] 自动检测游戏目录
 - [x] 汉化
-- [x] Readme
 - [x] 自解压
+- [x] 安装器
+- [x] 自动检测更新
+- [x] 中文自述文件
+- [x] 英文自述文件
