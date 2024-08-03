@@ -9,19 +9,33 @@
 **此项目根据 *Apache License 2.0* 开源，仅用于学习交流，请勿用于非法用途。**
 
 ## 安装教程
+
 以下提供三种安装方式，使用其中一种即可，请按需选用。
+
 ### 安装器安装 *推荐！*
->   安装器技术支持与维护由[MFunction96](https://github.com/MFunction96)友情提供。
+>   安装器技术支持与维护由[MFunction](https://github.com/MFunction96)友情提供。项目地址：https://github.com/MFunction96/KorabliChsMod
 
 无论Github还是Gitee，均转去最新发布下载即可，或访问以下链接以下载安装包含.NET 8运行环境的安装包：
 
-- Github: [KorabliChsModInstallerWithRuntime.exe](https://github.com/MFunction96/KorabliChsMod/releases/latest/download/KorabliChsModInstallerWithRuntime.exe)
+Github: https://github.com/MFunction96/KorabliChsMod/releases/latest/download/KorabliChsModInstallerWithRuntime.exe
+
+Gitee: *待完善*
 
 > 如果确定本地已安装.NET 8运行环境，可选择以下安装包：
 >
-> - Github: [KorabliChsModInstaller.exe](https://github.com/MFunction96/KorabliChsMod/releases/latest/download/KorabliChsModInstaller.exe)
+> Github: https://github.com/MFunction96/KorabliChsMod/releases/latest/download/KorabliChsModInstaller.exe
+>
+> Gitee: *待完善*
 
 按照安装说明及提示完成安装即可，默认安装位置为：`%AppData%\KorabliChsMod`，即`C:\Users\<用户名>\AppData\Roaming\KorabliChsMod`，安装过程中会自动在桌面创建快捷方式。
+
+> **<font color='red'>请勿安装在包含空格的路径下，当前版本暂不支持此类路径静默升级。</font>** ~~*后续可能懒得支持了*~~
+> 
+> 推荐路径：`C:\Program`
+>
+> 不推荐路径：`C:\Program Files` （包含空格）
+
+### 使用
 
 打开桌面快捷方式，进入程序。
 
