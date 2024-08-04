@@ -13,17 +13,18 @@
 以下提供三种安装方式，使用其中一种即可，请按需选用。
 
 ### 安装器安装 *推荐！*
->   安装器技术支持与维护由[MFunction](https://github.com/MFunction96)友情提供。项目地址：https://github.com/MFunction96/KorabliChsMod
+> 安装器技术支持与维护由[MFunction](https://github.com/MFunction96)友情提供。<br>
+> 项目地址：https://github.com/MFunction96/KorabliChsMod
 
 无论Github还是Gitee，均转去最新发布下载即可，或访问以下链接以下载安装包含.NET 8运行环境的安装包：
 
-Github: https://github.com/MFunction96/KorabliChsMod/releases/latest/download/KorabliChsModInstallerWithRuntime.exe
+Github: [KorabliChsModInstallerWithRuntime.exe](https://github.com/MFunction96/KorabliChsMod/releases/latest/download/KorabliChsModInstallerWithRuntime.exe)
 
 Gitee: *待完善*
 
 > 如果确定本地已安装.NET 8运行环境，可选择以下安装包：
 >
-> Github: https://github.com/MFunction96/KorabliChsMod/releases/latest/download/KorabliChsModInstaller.exe
+> Github: [KorabliChsModInstaller.exe](https://github.com/MFunction96/KorabliChsMod/releases/latest/download/KorabliChsModInstaller.exe)
 >
 > Gitee: *待完善*
 
