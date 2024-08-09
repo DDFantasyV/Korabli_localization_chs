@@ -8,6 +8,13 @@ If you find any text errors in the game while using the localization, please sen
 **This project is open source under *Apache License 2.0* and is only for learning and communication purposes. Please do not use it for illegal purposes.**
 
 ## Instruction
+
+Here we provide three installation methods. Please choose one of them as needed.
+
+### Installer installation *Recommended!*
+
+Still Working...
+
 ### Automatic installation *Recommended!*
 1. Download and open `Korabli_chs_Setup.exe`,and authorize administrator privileges.
 2. Manually select game directory, normally it is`$YOUR_GAME$/bin/$LARGEST_NUM$/res_mod`.
@@ -41,11 +48,16 @@ If the above measures are ineffective, please provide feedback in the issue or Q
 Q.What should I do if antivirus software prompts for a virus?<br>
 A.This is a false alarm from antivirus software. Choose options such as `Trust` or `Keep` to continue installing.
 ***
+Q.What should I do if I raise problems while using the installer?<br>
+A.Please provide feedback in KorabliChsMod's [issue](https://github.com/MFunction96/KorabliChsMod/issues) for issues of installer.
 
 ## To do
 - [ ] Detect game directory automatically
 - [x] Translation
-- [x] Readme
 - [x] Self-unzip
+- [x] Installer
+- [x] Auto-detected update
+- [x] CN Readme
+- [x] EN Readme
 
 如有不准确处，以中文版本README为准。
