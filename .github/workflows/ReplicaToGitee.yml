@@ -10,7 +10,7 @@ jobs:
       - name: Install SSH Key
         uses: shimataro/ssh-key-action@v2.7.0
         with:
-          key: ${{ secrets.SSH_KEY }}
+          key: ${{ secrets.GITEE_SSH_KEY }}
       - name: Push to Gitee
         run: |
           git checkout -b main origin/main
