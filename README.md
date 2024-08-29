@@ -1,5 +1,10 @@
 # 战舰世界俄服本土化（汉化）
+
 >本汉化包由B站UP主`年糕特工队`、`DDF_FantasyV`、`Mochidzuki`和`walksQAQ`共同制作。
+
+![GitHub License](https://img.shields.io/github/license/DDFantasyV/Korabli_localization_chs)
+![GitHub Downloads (all assets, all releases)](https://img.shields.io/github/downloads/DDFantasyV/Korabli_localization_chs/total)
+
 
 **安装前请仔细阅读以下说明及Q&A！**<br>
 如在使用汉化包的游玩过程中发现游戏内存在文本错误，请向我们反馈，谢谢您的帮助。<br>
@@ -44,8 +49,6 @@ Gitee: *待完善*
 2. 点击`安装`，等待片刻即可完成。**无论检测到汉化安装与否，程序均会安装/覆盖安装最新版本的汉化补丁至指定客户端**。
 
 ![主程序](https://dev.azure.com/XanaCN/f06af8ee-5084-455c-ac24-8fc4f735382c/_apis/git/repositories/d36405a6-bc74-45e3-b720-3a2c79f5c30e/items?path=/doc/README/MainWindow.png)
-
-> 目前正在紧锣密鼓地开发客户端自动搜索功能，敬请期待。
 
 ### 自动安装 *推荐！*
 1. 下载并打开`Korabli_chs_Setup.exe`，并授权管理员权限
