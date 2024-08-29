@@ -4,7 +4,7 @@
 
 ![GitHub License](https://img.shields.io/github/license/DDFantasyV/Korabli_localization_chs)
 ![GitHub Downloads (all assets, all releases)](https://img.shields.io/github/downloads/DDFantasyV/Korabli_localization_chs/total)
-
+[![.github/workflows/ReplicaToGitee.yml](https://github.com/DDFantasyV/Korabli_localization_chs/actions/workflows/ReplicaToGitee.yml/badge.svg)](https://github.com/DDFantasyV/Korabli_localization_chs/actions/workflows/ReplicaToGitee.yml)
 
 **安装前请仔细阅读以下说明及Q&A！**<br>
 如在使用汉化包的游玩过程中发现游戏内存在文本错误，请向我们反馈，谢谢您的帮助。<br>

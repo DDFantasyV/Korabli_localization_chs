@@ -2,18 +2,17 @@ on:
   release:
     types: [published]
 jobs:
-  replica_to_gitee:
-    name: Run npm on Ubuntu
+  ReplicaToGitee:
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout
+        uses: actions/checkout@v2
       - name: Install SSH Key
         uses: shimataro/ssh-key-action@v2.7.0
         with:
           key: ${{ secrets.SSH_KEY }}
-
-      - name: Replica Code
-      - uses: actions/checkout@v4
-      - run: |
+      - name: Push to Gitee
+        run: |
           git checkout -b main origin/main
-          git push git@gitee.com:repad/Korabli_localization_chs.git
-          git push git@gitee.com:repad/Korabli_localization_chs.git --tags
+          git push git clone git@gitee.com:repad/Korabli_localization_chs.git --force
+          git clone git@gitee.com:repad/Korabli_localization_chs.git --tags
