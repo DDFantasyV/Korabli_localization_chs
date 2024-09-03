@@ -86,8 +86,8 @@ Q.我使用安装器时出现了问题，应该怎么办？<br>
 A.安装器相关问题请在KorabliChsMod的[issue](https://github.com/MFunction96/KorabliChsMod/issues)下进行反馈.
 
 ## 待实现功能
-- [ ] 自动检测游戏目录
 - [x] 汉化
+- [x] 自动检测游戏目录
 - [x] 自解压
 - [x] 安装器
 - [x] 自动检测更新
