@@ -1,5 +1,10 @@
 # 战舰世界俄服本土化（汉化）
+
 >本汉化包由B站UP主`年糕特工队`、`DDF_FantasyV`、`Mochidzuki`和`walksQAQ`共同制作。
+
+![GitHub License](https://img.shields.io/github/license/DDFantasyV/Korabli_localization_chs)
+![GitHub Downloads (all assets, all releases)](https://img.shields.io/github/downloads/DDFantasyV/Korabli_localization_chs/total)
+[![.github/workflows/ReplicaToGitee.yml](https://github.com/DDFantasyV/Korabli_localization_chs/actions/workflows/ReplicaToGitee.yml/badge.svg)](https://github.com/DDFantasyV/Korabli_localization_chs/actions/workflows/ReplicaToGitee.yml)
 
 **安装前请仔细阅读以下说明及Q&A！**<br>
 如在使用汉化包的游玩过程中发现游戏内存在文本错误，请向我们反馈，谢谢您的帮助。<br>
@@ -45,8 +50,6 @@ Gitee: *待完善*
 
 ![主程序](https://dev.azure.com/XanaCN/f06af8ee-5084-455c-ac24-8fc4f735382c/_apis/git/repositories/d36405a6-bc74-45e3-b720-3a2c79f5c30e/items?path=/doc/README/MainWindow.png)
 
-> 目前正在紧锣密鼓地开发客户端自动搜索功能，敬请期待。
-
 ### 自动安装 *推荐！*
 1. 下载并打开`Korabli_chs_Setup.exe`，并授权管理员权限
 2. 手动选择游戏目录，标准格式为`你的游戏目录/bin/数字最大的文件夹/res_mod`
@@ -83,8 +86,8 @@ Q.我使用安装器时出现了问题，应该怎么办？<br>
 A.安装器相关问题请在KorabliChsMod的[issue](https://github.com/MFunction96/KorabliChsMod/issues)下进行反馈.
 
 ## 待实现功能
-- [ ] 自动检测游戏目录
 - [x] 汉化
+- [x] 自动检测游戏目录
 - [x] 自解压
 - [x] 安装器
 - [x] 自动检测更新
