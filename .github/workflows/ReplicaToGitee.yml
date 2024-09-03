@@ -1,6 +1,9 @@
+name: "Gitee镜像"
 on:
+  workflow_dispatch:
   release:
     types: [published]
+  
 jobs:
   ReplicaToGitee:
     runs-on: ubuntu-latest
@@ -11,6 +14,7 @@ jobs:
         uses: shimataro/ssh-key-action@v2.7.0
         with:
           key: ${{ secrets.GITEE_SSH_KEY }}
+          known_hosts: "*.gitee.com"
       - name: Push to Gitee
         run: |
           git checkout -b main origin/main
