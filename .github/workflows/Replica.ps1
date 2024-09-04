@@ -1,6 +1,6 @@
 param(
     [Parameter(Mandatory = $true)]
-    [string] $AcccessToken
+    [string] $AccessToken
 )
 
 $githubReleaseApiUrl = "https://api.github.com/repos/MFunction96/KorabliChsMod/releases"
