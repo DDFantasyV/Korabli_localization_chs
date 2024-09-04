@@ -16,6 +16,7 @@ jobs:
           key: ${{ secrets.GITEE_SSH_KEY }}
           known_hosts: "*.gitee.com"
       - name: Push to Gitee
+        shell: pwsh
         run: |
           git switch main
           git push git@gitee.com:repad/Korabli_localization_chs.git --force
