@@ -14,7 +14,7 @@ jobs:
         uses: shimataro/ssh-key-action@v2.7.0
         with:
           key: ${{ secrets.GITEE_SSH_KEY }}
-          known_hosts: "*.gitee.com"
+          known_hosts: "*"
       - name: Push to Gitee
         shell: pwsh
         run: |
