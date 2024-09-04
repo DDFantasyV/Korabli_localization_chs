@@ -1,4 +1,4 @@
-name: "Gitee镜像"
+name: "Gitee Mirror"
 on:
   workflow_dispatch:
   release:
@@ -17,6 +17,7 @@ jobs:
           known_hosts: "*.gitee.com"
       - name: Push to Gitee
         run: |
-          git checkout -b main origin/main
-          git push git clone git@gitee.com:repad/Korabli_localization_chs.git --force
-          git clone git@gitee.com:repad/Korabli_localization_chs.git --tags
+          git switch main
+          git push git@gitee.com:repad/Korabli_localization_chs.git --force
+          git push git@gitee.com:repad/Korabli_localization_chs.git --tags
+          .github/workflows/Replica.ps1 -AccessToken ${{ secrets.GITEE_ACCESS_TOKEN }}
