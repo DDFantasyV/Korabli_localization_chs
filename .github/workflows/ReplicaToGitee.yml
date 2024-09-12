@@ -1,0 +1,24 @@
+name: "Gitee Mirror"
+on:
+  workflow_dispatch:
+  release:
+    types: [published]
+  
+jobs:
+  ReplicaToGitee:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Install SSH Key
+        uses: shimataro/ssh-key-action@v2.7.0
+        with:
+          key: ${{ secrets.GITEE_SSH_KEY }}
+          known_hosts: "*.gitee.com"
+      - name: Push to Gitee
+        shell: pwsh
+        run: |
+          git switch main
+          git push git@gitee.com:repad/Korabli_localization_chs.git --force
+          git push git@gitee.com:repad/Korabli_localization_chs.git --tags
+          .github/workflows/Replica.ps1 -AccessToken ${{ secrets.GITEE_ACCESS_TOKEN }}

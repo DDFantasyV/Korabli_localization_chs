@@ -1,0 +1,3 @@
+[submodule "Korabli_localization_chs_downloader"]
+	path = Korabli_localization_chs_downloader
+	url = https://github.com/MFunction96/KorabliChsMod.git

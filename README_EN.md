@@ -52,8 +52,13 @@ Q.What should I do if I raise problems while using the installer?<br>
 A.Please provide feedback in KorabliChsMod's [issue](https://github.com/MFunction96/KorabliChsMod/issues) for issues of installer.
 
 ## To do
+<<<<<<< HEAD
+- [x] Translation
+- [x] Detect game directory automatically
+=======
 - [ ] Detect game directory automatically
 - [x] Translation
+>>>>>>> a2433d9e41747ad08d43e2a37bad5a16d5356f0d
 - [x] Self-unzip
 - [x] Installer
 - [x] Auto-detected update
