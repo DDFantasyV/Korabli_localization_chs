@@ -50,5 +50,6 @@ catch {
 	throw $_
 }
 finally {
+	Set-Location ~
 	Remove-Item -Path $tmpPath -Force -Recurse
 }
