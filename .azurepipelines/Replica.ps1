@@ -35,7 +35,7 @@ try {
 		"Content-Type" = "application/json;charset=UTF-8"
 	}
 	$giteeReleaseBody = @{
-		"access_token" = ${AcccessToken}
+		"access_token" = $AccessToken
 		"tag_name" = $latestGithubRelease.tag_name
 		"name" = $latestGithubRelease.name
 		"body" = $latestGithubRelease.body
