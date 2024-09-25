@@ -1,8 +1,6 @@
 param(
     [Parameter(Mandatory = $true)]
-    [string] $AccessToken,
-	[Parameter(Mandatory = $false)]
-	[string] $Branch = 'main'
+    [string] $AccessToken
 )
 
 if ([string]::IsNullOrEmpty($env:TMP)) {
@@ -17,10 +15,9 @@ if ([System.IO.Directory]::Exists($tmpPath)) {
 [System.IO.Directory]::CreateDirectory($tmpPath)
 try {
 	Set-Location $tmpPath
-	git clone git@github.com:DDFantasyV/Korabli_localization_chs.git --branch $Branch
-	Set-Location Korabli_localization_chs
-	git push git@gitee.com:repad/Korabli_localization_chs.git --force
-	git push git@gitee.com:repad/Korabli_localization_chs.git --tags
+	git clone git@github.com:DDFantasyV/Korabli_localization_chs.git --mirror
+	Set-Location Korabli_localization_chs.git
+	git push git@gitee.com:repad/Korabli_localization_chs.git --force --all
 	$githubReleaseApiUrl = "https://api.github.com/repos/DDFantasyV/Korabli_localization_chs/releases"
 	$githubReleaseHeaders = @{
 		"Accept" = "application/vnd.github.v3+json"
