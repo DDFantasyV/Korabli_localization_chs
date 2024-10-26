@@ -20,17 +20,13 @@
 > 安装器技术支持与维护由[MFunction](https://github.com/MFunction96)友情提供。<br>
 > 项目地址：https://github.com/MFunction96/KorabliChsMod
 
-无论Github还是Gitee，均转去最新发布下载即可，或访问以下链接以下载安装包含.NET 8运行环境的安装包：
+Github转去最新发布下载即可，或访问以下链接以下载安装包含.NET 8运行环境的安装包：
 
-Github: [KorabliChsModInstallerWithRuntime.exe](https://github.com/MFunction96/KorabliChsMod/releases/latest/download/KorabliChsModInstallerWithRuntime.exe)
-
-Gitee: *待完善*
+[KorabliChsModInstallerWithRuntime.exe](https://github.com/MFunction96/KorabliChsMod/releases/latest/download/KorabliChsModInstallerWithRuntime.exe)
 
 > 如果确定本地已安装.NET 8运行环境，可选择以下安装包：
 >
 > Github: [KorabliChsModInstaller.exe](https://github.com/MFunction96/KorabliChsMod/releases/latest/download/KorabliChsModInstaller.exe)
->
-> Gitee: *待完善*
 
 按照安装说明及提示完成安装即可，默认安装位置为：`%AppData%\KorabliChsMod`，即`C:\Users\<用户名>\AppData\Roaming\KorabliChsMod`，安装过程中会自动在桌面创建快捷方式。
 
