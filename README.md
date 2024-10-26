@@ -26,7 +26,7 @@ Github转去最新发布下载即可，或访问以下链接以下载安装包�
 
 > 如果确定本地已安装.NET 8运行环境，可选择以下安装包：
 >
-> Github: [KorabliChsModInstaller.exe](https://github.com/MFunction96/KorabliChsMod/releases/latest/download/KorabliChsModInstaller.exe)
+> [KorabliChsModInstaller.exe](https://github.com/MFunction96/KorabliChsMod/releases/latest/download/KorabliChsModInstaller.exe)
 
 按照安装说明及提示完成安装即可，默认安装位置为：`%AppData%\KorabliChsMod`，即`C:\Users\<用户名>\AppData\Roaming\KorabliChsMod`，安装过程中会自动在桌面创建快捷方式。
 
