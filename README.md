@@ -4,7 +4,6 @@
 
 ![GitHub License](https://img.shields.io/github/license/DDFantasyV/Korabli_localization_chs)
 ![GitHub Downloads (all assets, all releases)](https://img.shields.io/github/downloads/DDFantasyV/Korabli_localization_chs/total)
-[![Mirror](https://vsrm.dev.azure.com/XanaCN/_apis/public/Release/badge/f06af8ee-5084-455c-ac24-8fc4f735382c/6/8)](https://dev.azure.com/XanaCN/Lyoko/_release?view=mine&_a=releases&definitionId=6)
 
 **安装前请仔细阅读以下说明及Q&A！**<br>
 如在使用汉化包的游玩过程中发现游戏内存在文本错误，请向我们反馈，谢谢您的帮助。<br>
@@ -21,17 +20,13 @@
 > 安装器技术支持与维护由[MFunction](https://github.com/MFunction96)友情提供。<br>
 > 项目地址：https://github.com/MFunction96/KorabliChsMod
 
-无论Github还是Gitee，均转去最新发布下载即可，或访问以下链接以下载安装包含.NET 8运行环境的安装包：
+Github转去最新发布下载即可，或访问以下链接以下载安装包含.NET 8运行环境的安装包：
 
-Github: [KorabliChsModInstallerWithRuntime.exe](https://github.com/MFunction96/KorabliChsMod/releases/latest/download/KorabliChsModInstallerWithRuntime.exe)
-
-Gitee: *待完善*
+[KorabliChsModInstallerWithRuntime.exe](https://github.com/MFunction96/KorabliChsMod/releases/latest/download/KorabliChsModInstallerWithRuntime.exe)
 
 > 如果确定本地已安装.NET 8运行环境，可选择以下安装包：
 >
-> Github: [KorabliChsModInstaller.exe](https://github.com/MFunction96/KorabliChsMod/releases/latest/download/KorabliChsModInstaller.exe)
->
-> Gitee: *待完善*
+> [KorabliChsModInstaller.exe](https://github.com/MFunction96/KorabliChsMod/releases/latest/download/KorabliChsModInstaller.exe)
 
 按照安装说明及提示完成安装即可，默认安装位置为：`%AppData%\KorabliChsMod`，即`C:\Users\<用户名>\AppData\Roaming\KorabliChsMod`，安装过程中会自动在桌面创建快捷方式。
 
