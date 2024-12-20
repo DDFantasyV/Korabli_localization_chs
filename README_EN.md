@@ -51,13 +51,4 @@ A.This is a false alarm from antivirus software. Choose options such as `Trust` 
 Q.What should I do if I raise problems while using the installer?<br>
 A.Please provide feedback in KorabliChsMod's [issue](https://github.com/MFunction96/KorabliChsMod/issues) for issues of installer.
 
-## To do
-- [x] Translation
-- [x] Detect game directory automatically
-- [x] Self-unzip
-- [x] Installer
-- [x] Auto-detected update
-- [x] CN Readme
-- [x] EN Readme
-
 如有不准确处，以中文版本README为准。
