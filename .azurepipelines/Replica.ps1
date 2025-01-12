@@ -1,5 +1,5 @@
 param(
-	[bool]$isTest = $false
+	[switch]$isTest = $false
 )
 
 $modName = "Korabli_localization_chs"
