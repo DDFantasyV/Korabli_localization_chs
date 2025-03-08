@@ -60,8 +60,8 @@ jobs:
       App_Packages_Directory: AppPackages
       SigningCertificate: auto-package.pfx
       Solution_Path: auto-package\auto-package.sln
-      Test_Project_Path: auto-package\auto-package.Tests\MyWpfApp.Tests.csproj
-      Wpf_Project_Path: auto-package\auto-package.csproj
+      Test_Project_Path: auto-package\auto-package (Tests)\auto-package.Tests.csproj
+      Wpf_Project_Path: auto-package\auto-package\auto-package.csproj
       Wap_Project_Directory: auto-package\auto-package (Package)
       Wap_Project_Name: auto-package.Package.wapproj
       Actions_Allow_Unsecure_Commands: true # Allows AddPAth and SetEnv commands

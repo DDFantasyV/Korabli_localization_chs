@@ -1,6 +1,6 @@
 # 战舰世界俄服本土化（汉化）
 
-> 本汉化包由B站UP主`年糕特工队`、`DDF_FantasyV`、`Mochidzuki`和`walksQAQ`共同制作。<br>
+> 本汉化包由`DDF_FantasyV`、`Kuonji_Alice_My_Waifu`、`nian__gao233`共同制作维护。<br>
 > 安装器技术支持与维护由[MFunction](https://github.com/MFunction96)友情提供。
 
 ![GitHub License](https://img.shields.io/github/license/DDFantasyV/Korabli_localization_chs)

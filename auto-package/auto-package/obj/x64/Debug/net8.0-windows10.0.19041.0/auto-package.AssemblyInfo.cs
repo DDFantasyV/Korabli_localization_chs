@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("auto-package")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0931fb6874102681a7bc22dec0d5146c302e936f")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+22372fa8f25464624b938768667b0aa1bf411e69")]
 [assembly: System.Reflection.AssemblyProductAttribute("auto-package")]
 [assembly: System.Reflection.AssemblyTitleAttribute("auto-package")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

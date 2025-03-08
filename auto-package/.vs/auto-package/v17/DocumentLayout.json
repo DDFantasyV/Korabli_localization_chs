@@ -3,8 +3,8 @@
   "WorkspaceRootPath": "E:\\Korabli_localization_chs\\Korabli_localization_chs\\auto-package\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{34EE0C17-0AD8-4BED-8837-72C6F8FFD345}|auto-package\\auto-package.csproj|e:\\korabli_localization_chs\\korabli_localization_chs\\auto-package\\auto-package\\app.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{34EE0C17-0AD8-4BED-8837-72C6F8FFD345}|auto-package\\auto-package.csproj|solutionrelative:auto-package\\app.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{34EE0C17-0AD8-4BED-8837-72C6F8FFD345}|auto-package\\auto-package.csproj|e:\\korabli_localization_chs\\korabli_localization_chs\\auto-package\\auto-package\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{34EE0C17-0AD8-4BED-8837-72C6F8FFD345}|auto-package\\auto-package.csproj|solutionrelative:auto-package\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -19,14 +19,14 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "App.xaml.cs",
-              "DocumentMoniker": "E:\\Korabli_localization_chs\\Korabli_localization_chs\\auto-package\\auto-package\\App.xaml.cs",
-              "RelativeDocumentMoniker": "auto-package\\App.xaml.cs",
-              "ToolTip": "E:\\Korabli_localization_chs\\Korabli_localization_chs\\auto-package\\auto-package\\App.xaml.cs",
-              "RelativeToolTip": "auto-package\\App.xaml.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Title": "MainWindow.xaml.cs",
+              "DocumentMoniker": "E:\\Korabli_localization_chs\\Korabli_localization_chs\\auto-package\\auto-package\\MainWindow.xaml.cs",
+              "RelativeDocumentMoniker": "auto-package\\MainWindow.xaml.cs",
+              "ToolTip": "E:\\Korabli_localization_chs\\Korabli_localization_chs\\auto-package\\auto-package\\MainWindow.xaml.cs",
+              "RelativeToolTip": "auto-package\\MainWindow.xaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAABJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-08T13:34:45.407Z",
+              "WhenOpened": "2025-03-08T13:45:58.552Z",
               "EditorCaption": ""
             }
           ]
