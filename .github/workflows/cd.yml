@@ -16,8 +16,6 @@ name: auto-package
 #   git tag 1.0.0.0
 #   git push origin --tags
 on:
-  push:
-    branches: [ "main" ]
   pull_request:
     branches: [ "main" ]
 
@@ -106,7 +104,6 @@ jobs:
         $currentDirectory = Get-Location
         $certificatePath = Join-Path -Path $currentDirectory -ChildPath $env:Wap_Project_Directory -AdditionalChildPath $env:SigningCertificate
         [IO.File]::WriteAllBytes("$certificatePath", $pfx_cert_byte)
-      if: matrix.ChannelName != 'Prod_Store'
 
     # Restore the application
     - name:  Restore the Wpf application to populate the obj folder
@@ -115,10 +112,9 @@ jobs:
         Configuration: ${{ matrix.Configuration }}
         RuntimeIdentifier: win-${{ matrix.targetplatform }}
 
-    # Build the Windows Application Packaging project for Dev and Prod_Sideload
+    # Build the Windows Application Packaging project for Debug
     - name: Build the Windows Application Packaging Project (wapproj) for ${{ matrix.ChannelName }}
       run: msbuild $env:Solution_Path /p:Platform=$env:TargetPlatform /p:Configuration=$env:Configuration /p:UapAppxPackageBuildMode=$env:BuildMode /p:AppxBundle=$env:AppxBundle /p:PackageCertificateKeyFile=$env:SigningCertificate /p:PackageCertificatePassword=${{ secrets.Pfx_Key }}
-      if: matrix.ChannelName != 'Prod_Store'
       env:
         AppxBundle: Never
         AppInstallerUri: ${{ matrix.DistributionUrl }}
@@ -127,22 +123,9 @@ jobs:
         GenerateAppInstallerFile: True
         TargetPlatform: ${{ matrix.targetplatform }}
 
-    # Build the Windows Application Packaging project for Prod_Store
-    - name: Build the Windows Application Packaging Project (wapproj) for ${{ matrix.ChannelName }}
-      run: msbuild $env:Solution_Path /p:Platform=$env:TargetPlatform /p:Configuration=$env:Configuration /p:UapAppxPackageBuildMode=$env:BuildMode /p:AppxBundle=$env:AppxBundle /p:GenerateAppInstallerFile=$env:GenerateAppInstallerFile /p:AppxPackageSigningEnabled=$env:AppxPackageSigningEnabled
-      if: matrix.ChannelName == 'Prod_Store'
-      env:
-        AppxBundle: Never
-        AppxPackageSigningEnabled: False
-        BuildMode: StoreUpload
-        Configuration: ${{ matrix.Configuration }}
-        GenerateAppInstallerFile: False
-        TargetPlatform: ${{ matrix.targetplatform }}
-
     # Remove the .pfx
     - name: Remove the .pfx
       run: Remove-Item -path $env:Wap_Project_Directory\$env:SigningCertificate
-      if: matrix.ChannelName != 'Prod_Store'
 
     # Archive the package
     - name: Create archive
