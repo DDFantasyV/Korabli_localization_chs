@@ -1,13 +1,24 @@
 # 战舰世界俄服本土化（汉化）
 
->本汉化包由B站UP主`年糕特工队`、`DDF_FantasyV`、`Mochidzuki`和`walksQAQ`共同制作。
+> 本汉化包由`DDF_FantasyV`、`Kuonji_Alice_My_Waifu`、`nian__gao233`共同制作维护。<br>
+> 安装器技术支持与维护由[MFunction](https://github.com/MFunction96)友情提供。
 
 ![GitHub License](https://img.shields.io/github/license/DDFantasyV/Korabli_localization_chs)
 ![GitHub Downloads (all assets, all releases)](https://img.shields.io/github/downloads/DDFantasyV/Korabli_localization_chs/total)
 
-**安装前请仔细阅读以下说明及Q&A！**<br>
 如在使用汉化包的游玩过程中发现游戏内存在文本错误，请向我们反馈，谢谢您的帮助。<br>
+
+点击下方链接以下载自动安装器：
+
+**[KorabliChsModInstallerWithRuntime.exe](https://github.com/MFunction96/KorabliChsMod/releases/latest/download/KorabliChsModInstallerWithRuntime.exe)**
+
+> 如果确定本地已安装.NET 8运行环境，可选择以下安装包：
+>
+> [KorabliChsModInstaller.exe](https://github.com/MFunction96/KorabliChsMod/releases/latest/download/KorabliChsModInstaller.exe)
+
 本文另有：[English Version](README_EN.md)
+
+**安装前请仔细阅读以下说明及Q&A！**<br>
 
 ## 声明
 **此项目根据 *Apache License 2.0* 开源，仅用于学习交流，请勿用于非法用途。**
@@ -17,16 +28,7 @@
 以下提供三种安装方式，使用其中一种即可，请按需选用。
 
 ### 安装器安装 *推荐！*
-> 安装器技术支持与维护由[MFunction](https://github.com/MFunction96)友情提供。<br>
 > 项目地址：https://github.com/MFunction96/KorabliChsMod
-
-Github转去最新发布下载即可，或访问以下链接以下载安装包含.NET 8运行环境的安装包：
-
-[KorabliChsModInstallerWithRuntime.exe](https://github.com/MFunction96/KorabliChsMod/releases/latest/download/KorabliChsModInstallerWithRuntime.exe)
-
-> 如果确定本地已安装.NET 8运行环境，可选择以下安装包：
->
-> [KorabliChsModInstaller.exe](https://github.com/MFunction96/KorabliChsMod/releases/latest/download/KorabliChsModInstaller.exe)
 
 按照安装说明及提示完成安装即可，默认安装位置为：`%AppData%\KorabliChsMod`，即`C:\Users\<用户名>\AppData\Roaming\KorabliChsMod`，安装过程中会自动在桌面创建快捷方式。
 
