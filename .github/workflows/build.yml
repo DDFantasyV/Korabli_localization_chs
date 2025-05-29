@@ -8,14 +8,6 @@ jobs:
   build:
     runs-on: windows-latest
 
-    permissions:
-      releases:
-        - read
-        - write
-      contents:
-        - read
-        - write
-
     steps:
     - name: Checkout code
       uses: actions/checkout@v4
@@ -55,4 +47,4 @@ jobs:
           Korabli_chs_Setup/Release/*.msi
         tag_name: ${{ github.event.release.tag_name }}
       env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        GITHUB_TOKEN: ${{ secrets.PAT_TOKEN }}
