@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34031.279
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Korabli_chs_Setup", "Korabli_chs_Setup\Korabli_chs_Setup.vdproj", "{D9B4C358-AF15-49E3-B281-22EE9AD01790}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Default = Debug|Default
+		Release|Default = Release|Default
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D9B4C358-AF15-49E3-B281-22EE9AD01790}.Debug|Default.ActiveCfg = Debug
+		{D9B4C358-AF15-49E3-B281-22EE9AD01790}.Debug|Default.Build.0 = Debug
+		{D9B4C358-AF15-49E3-B281-22EE9AD01790}.Release|Default.ActiveCfg = Release
+		{D9B4C358-AF15-49E3-B281-22EE9AD01790}.Release|Default.Build.0 = Release
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {DB6C4998-9E56-4B79-AD6B-1E434BC4307E}
+	EndGlobalSection
+EndGlobal

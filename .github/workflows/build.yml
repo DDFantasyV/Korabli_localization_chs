@@ -1,0 +1,35 @@
+name: Korabli_chs_Setup
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Install VS Installer Projects
+      run: |
+        $vsixUrl = "https://marketplace.visualstudio.com/_apis/public/gallery/publishers/VisualStudioClient/vsextensions/MicrosoftVisualStudio2017InstallerProjects/1.0.0/vspackage"
+        $vsixPath = "$env:RUNNER_TEMP\installer.vsix"
+        Invoke-WebRequest -Uri $vsixUrl -OutFile $vsixPath
+        Start-Process -Wait -FilePath "C:\Program Files (x86)\Microsoft Visual Studio\2022\Enterprise\Common7\IDE\VSIXInstaller.exe" -ArgumentList "/q /a $vsixPath"
+
+    - name: Build solution
+      run: |
+        msbuild MySolution.sln /p:Configuration=Release /p:Platform="Any CPU" /p:DeployOnBuild=true
+
+    - name: Create Release
+      uses: softprops/action-gh-release@v1
+      with:
+        files: |
+          Korabli_chs_Setup/Release/*.exe
+          Korabli_chs_Setup/Release/*.msi
+        tag_name: ${{ github.ref_name }}
+        name: Installer Release
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
