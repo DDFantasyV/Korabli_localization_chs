@@ -5,6 +5,7 @@
 
 # GitHub API URL
 $GitHubApiUrl = "https://api.github.com/repos/DDFantasyV/Korabli_localization_chs/releases"
+$assetName = "Korabli_localization_chs.zip"
 
 # HTTP Headers
 $Headers = @{
@@ -24,8 +25,15 @@ try {
 # Modify URL to Cloudflare
 $LatestRelease = $Releases | Where-Object { -not $_.prerelease } | Sort-Object published_at -Descending | Select-Object -First 1
 $LatestPreRelease = $Releases | Where-Object { $_.prerelease } | Sort-Object published_at -Descending | Select-Object -First 1
-$LatestRelease.zipball_url = "https://warshipmod.mfbrain.xyz/mods/chs/Korabli_localization_chs.zip"
-$LatestPreRelease.zipball_url = "https://warshipmod.mfbrain.xyz/mods/chs/Korabli_localization_chs_test.zip"
+$LatestRelease.assets = [array]@(@{
+	browser_download_url = "https://warshipmod.mfbrain.xyz/mods/chs/Korabli_localization_chs.zip"
+	name = $assetName
+})
+$LatestPreRelease.assets = [array]@(@{
+	browser_download_url = "https://warshipmod.mfbrain.xyz/mods/chs/Korabli_localization_chs_test.zip"
+	name = $assetName
+})
+
 $FilteredReleases = @()
 if ($LatestRelease) { $FilteredReleases += $LatestRelease }
 if ($LatestPreRelease) { $FilteredReleases += $LatestPreRelease }
@@ -35,7 +43,12 @@ $OptimizedMetadata = @($FilteredReleases | ForEach-Object {
 		name		  = $_.name
 		prerelease	= $_.prerelease
 		published_at  = $_.published_at
-		zipball_url   = $_.zipball_url
+		assets   = [array]@($_.assets | ForEach-Object {
+			@{
+				browser_download_url  = $_.browser_download_url
+				name = $_.name
+			}
+		})
 	}
 })
 
