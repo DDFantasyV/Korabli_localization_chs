@@ -25,13 +25,19 @@ jobs:
         Invoke-WebRequest -Uri $vsixUrl -OutFile $vsixPath
         Start-Process -Wait -FilePath "${env:VS_PATH}\Common7\IDE\VSIXInstaller.exe" -ArgumentList "/q /a $vsixPath"
 
+    - name: Add MSBuild to PATH
+      uses: microsoft/setup-msbuild@v1.3
+      with:
+        vs-version: '17.0'  # VS 2022
+
     - name: Build solution
       run: |
         # 提取版本号（从release名称或标签）
         $version = "${{ github.event.release.tag_name }}"
         Write-Host "Building version: $version"
         
-        msbuild Korabli_chs_Setup.sln /p:Configuration=Release /p:Platform="Any CPU" /p:DeployOnBuild=true
+        $msbuildPath = & "${env:VS_PATH}\MSBuild\Current\Bin\MSBuild.exe"
+        & "$msbuildPath" Korabli_chs_Setup.sln /p:Configuration=Release /p:Platform="Any CPU" /p:DeployOnBuild=true
 
     - name: Upload assets to Release
       uses: softprops/action-gh-release@v1
