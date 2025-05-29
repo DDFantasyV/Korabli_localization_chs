@@ -43,7 +43,6 @@ jobs:
       uses: softprops/action-gh-release@v1
       with:
         files: |
-          Korabli_chs_Setup/Release/*.exe
           Korabli_chs_Setup/Release/*.msi
         tag_name: ${{ github.event.release.tag_name }}
       env:
