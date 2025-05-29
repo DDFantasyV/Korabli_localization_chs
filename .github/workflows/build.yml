@@ -1,8 +1,8 @@
 name: Korabli_chs_Setup
 
 on:
-  push:
-    branches: [ "main" ]
+  release:
+    types: ['released']
 
 jobs:
   build:
@@ -21,15 +21,18 @@ jobs:
 
     - name: Build solution
       run: |
-        msbuild MySolution.sln /p:Configuration=Release /p:Platform="Any CPU" /p:DeployOnBuild=true
+        # 提取版本号（从release名称或标签）
+        $version = "${{ github.event.release.tag_name }}"
+        Write-Host "Building version: $version"
+        
+        msbuild Korabli_chs_Setup.sln /p:Configuration=Release /p:Platform="Any CPU" /p:DeployOnBuild=true
 
-    - name: Create Release
+    - name: Upload assets to Release
       uses: softprops/action-gh-release@v1
       with:
         files: |
           Korabli_chs_Setup/Release/*.exe
           Korabli_chs_Setup/Release/*.msi
-        tag_name: ${{ github.ref_name }}
-        name: Installer Release
+        tag_name: ${{ github.event.release.tag_name }}
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
