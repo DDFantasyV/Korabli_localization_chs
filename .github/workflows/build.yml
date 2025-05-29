@@ -12,6 +12,18 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v4
 
+    - name: Find Visual Studio Path
+      shell: powershell
+      run: |
+        $vsPath = & "${env:ProgramFiles(x86)}\Microsoft Visual Studio\Installer\vswhere.exe" -version 17.0 -property installationPath
+        echo "VS_PATH=$vsPath" >> $env:GITHUB_ENV
+
+    - name: Install VSIX
+      shell: powershell
+      run: |
+        $vsixInstaller = "${env:VS_PATH}\Common7\IDE\VSIXInstaller.exe"
+        & "$vsixInstaller" /q /a YourExtension.vsix
+
     - name: Install VS Installer Projects
       run: |
         $vsixUrl = "https://marketplace.visualstudio.com/_apis/public/gallery/publishers/VisualStudioClient/vsextensions/MicrosoftVisualStudio2017InstallerProjects/1.0.0/vspackage"
