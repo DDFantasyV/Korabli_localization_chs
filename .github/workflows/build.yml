@@ -37,7 +37,7 @@ jobs:
         Write-Host "Building version: $version"
         
         $msbuildPath = & "${env:VS_PATH}\MSBuild\Current\Bin\MSBuild.exe"
-        msbuild Korabli_chs_Setup.sln /p:Configuration=Release /p:Platform="Any CPU" /p:DeployOnBuild=true
+        msbuild Korabli_chs_Setup.sln /p:Configuration=Release /p:DeployOnBuild=true
 
     - name: Upload assets to Release
       uses: softprops/action-gh-release@v1
