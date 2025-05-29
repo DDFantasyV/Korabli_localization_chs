@@ -1,2 +1,7 @@
 .idea/
 .vs/
+.Korabli_localization_chs_downloader/
+Korabli_chs_Setup/Debug/Korabli_chs_Setup.msi
+Korabli_chs_Setup/Debug/setup.exe
+Korabli_chs_Setup/Release/Korabli_chs_Setup.msi
+Korabli_chs_Setup/Release/setup.exe
