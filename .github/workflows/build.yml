@@ -2,7 +2,7 @@ name: Korabli_chs_Setup
 
 on:
   release:
-    types: ['released']
+    types: [released]
 
 jobs:
   build:
