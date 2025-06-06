@@ -44,6 +44,7 @@ jobs:
       with:
         files: |
           Korabli_chs_Setup/Release/*.msi
+          Korabli_chs_Setup/Release/*.exe
         tag_name: ${{ github.event.release.tag_name }}
       env:
         GITHUB_TOKEN: ${{ secrets.PAT_TOKEN }}
