@@ -32,7 +32,7 @@ $LatestRelease.assets = [array]@(@{
 })
 $LatestPreRelease.assets = [array]@(@{
 	browser_download_url = "https://warshipmod.mfbrain.xyz/mods/chs/Korabli_localization_chs_test.zip"
-	tag_name = $LatestRelease.tag_name
+	tag_name = $LatestPreRelease.tag_name
 	name = $assetName
 })
 
@@ -44,6 +44,7 @@ $OptimizedMetadata = @($FilteredReleases | ForEach-Object {
 	@{
 		name		  = $_.name
 		prerelease	= $_.prerelease
+		tag_name	  = $_.tag_name
 		published_at  = $_.published_at
 		assets   = [array]@($_.assets | ForEach-Object {
 			@{
