@@ -27,10 +27,12 @@ $LatestRelease = $Releases | Where-Object { -not $_.prerelease } | Sort-Object p
 $LatestPreRelease = $Releases | Where-Object { $_.prerelease } | Sort-Object published_at -Descending | Select-Object -First 1
 $LatestRelease.assets = [array]@(@{
 	browser_download_url = "https://warshipmod.mfbrain.xyz/mods/chs/Korabli_localization_chs.zip"
+	tag_name = $LatestRelease.tag_name
 	name = $assetName
 })
 $LatestPreRelease.assets = [array]@(@{
 	browser_download_url = "https://warshipmod.mfbrain.xyz/mods/chs/Korabli_localization_chs_test.zip"
+	tag_name = $LatestPreRelease.tag_name
 	name = $assetName
 })
 
@@ -42,6 +44,7 @@ $OptimizedMetadata = @($FilteredReleases | ForEach-Object {
 	@{
 		name		  = $_.name
 		prerelease	= $_.prerelease
+		tag_name	  = $_.tag_name
 		published_at  = $_.published_at
 		assets   = [array]@($_.assets | ForEach-Object {
 			@{
