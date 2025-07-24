@@ -20,7 +20,7 @@ $Headers = @{
 $assetName = "Korabli_localization_chs.zip"
 
 $modName = "Korabli_localization_chs"
-if ($isTest) {
+if ($Test) {
 	$modName = $modName + "_test"
 }
 
