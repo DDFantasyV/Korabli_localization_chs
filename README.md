@@ -1,67 +1,105 @@
-# 战舰世界俄服本土化（汉化）
-
-> 本汉化包由`DDF_FantasyV`、`Kuonji_Alice_My_Waifu`、`nian__gao233`共同制作维护。<br>
-> 安装器技术支持与维护由[MFunction](https://github.com/MFunction96)友情提供。
+# «Мир кораблей»中文本地化（汉化）
 
 ![GitHub License](https://img.shields.io/github/license/DDFantasyV/Korabli_localization_chs)
 ![GitHub Downloads (all assets, all releases)](https://img.shields.io/github/downloads/DDFantasyV/Korabli_localization_chs/total)
 
-如在使用汉化包的游玩过程中发现游戏内存在文本错误，请向我们反馈，谢谢您的帮助。<br>
+## 现开发者名单
+- [DDF_FantasyV](https://forum.korabli.su/profile/162368669-ddf_fantasyv/)
+- [Kuonji_Alice_My_Waifu](https://forum.korabli.su/profile/211796407-kuonji_alice_my_waifu/)
+- [M_Function](https://flot.ru/M_Function)
+- [nian__gao233](https://flot.ru/nian__gao233)
 
-点击下方链接以下载自动安装器：
+> **此项目根据 *Apache License 2.0* 开源，仅用于学习交流，请勿用于非法用途。**
+
+## 下载链接
+点击下方蓝链以下载自动安装器：
 
 **[KorabliChsModInstallerWithRuntime.exe](https://github.com/MFunction96/KorabliChsMod/releases/latest/download/KorabliChsModInstallerWithRuntime.exe)**
 
-> 如果确定本地已安装.NET 8运行环境，可选择以下安装包：
->
-> [KorabliChsModInstaller.exe](https://github.com/MFunction96/KorabliChsMod/releases/latest/download/KorabliChsModInstaller.exe)
+> 反馈渠道：<br>
+> REPAD汉化群 791861571<br>
+> REPAD莱斯塔交流群 980788898
 
-本文另有：[English Version](README_EN.md)
+## 模组简介
+此本地化模组可将游戏界面的显示语言修改为简体中文。安装自动安装器即可完成一键汉化。
 
-**安装前请仔细阅读以下说明及Q&A！**<br>
+模组支持正式服以及PT服以下内容的汉化:
+- 港口、战斗、作战任务界面
+- 科技树及舰船描述
+- 收藏品及介绍
+- 活动特殊界面 
+- 游戏内聊天
+- 其他游戏文本词条
 
-## 声明
-**此项目根据 *Apache License 2.0* 开源，仅用于学习交流，请勿用于非法用途。**
+## 模组特点
+- 风格一致的游戏术语
 
-## 安装教程
+同时游玩Lesta和WG服务器，对于同一个功能称呼千奇百怪？
 
-以下提供三种安装方式，使用其中一种即可，请按需选用。
+我们参考战舰世界新加坡组的简体中文本地化，并对于其中存在的错译、漏译以及音译等问题进行修正，使得游戏文本的风格一致。
 
-### 安装器安装 *推荐！*
-> 项目地址：https://github.com/MFunction96/KorabliChsMod
+- 严格的舰名与历史考据
 
-按照安装说明及提示完成安装即可，默认安装位置为：`%AppData%\KorabliChsMod`，即`C:\Users\<用户名>\AppData\Roaming\KorabliChsMod`，安装过程中会自动在桌面创建快捷方式。
+音译？虚构？我们拒绝。
 
-> **<font color='red'>请勿安装在包含空格的路径下，当前版本暂不支持此类路径静默升级。</font>** ~~*后续可能懒得支持了*~~
-> 
-> 推荐路径：`C:\Program`
->
-> 不推荐路径：`C:\Program Files` （包含空格）
+对于舰名，我们力求遵循命名规律，有意译意，无意译音；对于历史描述，我们参照相关历史文献进行审查和考据；对于专业名词，我们采用官方或国际通用译名。
 
-### 使用
+- 流畅自然的文字表述
 
-打开桌面快捷方式，进入程序。
+还在为生硬晦涩的机翻文本苦恼？
 
-1. 选择正确的游戏客户端安装的位置。
-2. 点击`安装`，等待片刻即可完成。**无论检测到汉化安装与否，程序均会安装/覆盖安装最新版本的汉化补丁至指定客户端**。
+我们的翻译人员要求精通中文、英文，熟练掌握俄语，确保游戏文本流畅且准确。
 
-![主程序](https://dev.azure.com/XanaCN/f06af8ee-5084-455c-ac24-8fc4f735382c/_apis/git/repositories/d36405a6-bc74-45e3-b720-3a2c79f5c30e/items?path=/doc/README/MainWindow.png)
+- 及时的更新推送
 
-### 自动安装 *推荐！*
-1. 下载并打开`Korabli_chs_Setup.exe`，并授权管理员权限
-2. 手动选择游戏目录，标准格式为`你的游戏目录/bin/数字最大的文件夹/res_mod`
-3. 点击下一步继续安装
-4. 安装完成！
+无法及时安装，PT新体验慢人一步？
 
-### 手动安装 *由于目录文件变动，该方法不推荐使用！*
-1. 下载压缩包文件或者`git clone`
-2. 找到游戏安装的根目录，其文件名通常为`World_of_Warships`或是`Korabli`
-3. 打开游戏根目录下的`bin`文件夹，找到里面**数字最大的文件夹**并打开
-4. 打开目录下的`res_mod`文件夹，将`texts`文件夹和`locale_config.xml`直接拖入，如提示是否覆盖请选择`是`
-5. 安装完成！
+我们通常在正式服和PT服前推送更新，确保玩家能够第一时间体验新功能。
 
-### 卸载
-打开`控制面板 > 程序 > 卸载程序`,右键本汉化包执行卸载。
+- 良好的社区支持
+
+我们的开发人员同时致力于«Мир кораблей»的社区开发环境，积极为中文本地化提供支持。
+
+## 效果展示
+安装此模组后的效果如下：
+- 港口界面
+
+![](./png/1.png)
+
+- 战斗界面
+
+![](./png/2.png)
+
+- 科技树界面
+
+![](./png/3.png)
+
+- 聊天界面
+
+![](./png/4.png)
+
+- 舰船描述
+
+![](./png/5.png)
+
+- 收藏品描述
+
+![](./png/6.png)
+
+## 功能
+
+自动安装器支持以下功能：
+- [x] 安装正式服汉化
+- [x] 安装测试（PT）服汉化
+- [x] 自动识别游戏目录
+- [x] 自动更新
+- [ ] 国内镜像源
+
+## 友情链接
+- [猫叔UoCat](https://space.bilibili.com/10604786)
+- [浩舰](https://iwarship.net/)
+- [«Мир кораблей»](https://korabli.su/)及[论坛](https://forum.korabli.su/)
+
 
 ## 常见问题
 >在提出任何问题之前，请确保已经阅读过了[提问的智慧](https://github.com/ryanhanwu/How-To-Ask-Questions-The-Smart-Way/blob/main/README-zh_CN.md)。
@@ -81,3 +119,4 @@ A.杀毒软件误报，选择`信任程序`或者`保留`等选项继续安装�
 ***
 Q.我使用安装器时出现了问题，应该怎么办？<br>
 A.安装器相关问题请在KorabliChsMod的[issue](https://github.com/MFunction96/KorabliChsMod/issues)下进行反馈.
+
