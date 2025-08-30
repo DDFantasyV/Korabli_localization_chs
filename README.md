@@ -1,4 +1,4 @@
-# «Мир кораблей»中文本地化（汉化）
+# «Мир кораблей» 中文本地化（汉化）
 
 ![GitHub License](https://img.shields.io/github/license/DDFantasyV/Korabli_localization_chs)
 ![GitHub Downloads (all assets, all releases)](https://img.shields.io/github/downloads/DDFantasyV/Korabli_localization_chs/total)

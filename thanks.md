@@ -1,12 +1,10 @@
-RANKED<br>
-DDF_FantasyV https://flot.ru/DDF_FantasyV<br>
-Kuonji_Alice_My_Waifu https://flot.ru/Kuonji_Alice_My_Waifu<br>
-MFunction https://flot.ru/M_Function<br>
-nian__gao233 https://flot.ru/nian__gao233<br>
+# RANKED
+- [DDF_FantasyV](https://flot.ru/DDF_FantasyV)
+- [Kuonji_Alice_My_Waifu](https://flot.ru/Kuonji_Alice_My_Waifu)
+- [M_Function](https://flot.ru/M_Function)
+- [nian__gao233](https://flot.ru/nian__gao233)
 
-PENDING<br>
-
-GRAVEYARD<br>
-Mochidzuki https://flot.ru/Mochidzuki<br>
-walksQAQ https://flot.ru/walksQAQ<br>
+# GRAVEYARD
+- [Mochidzuki](https://flot.ru/Mochidzuki)
+- [walksQAQ](https://flot.ru/walksQAQ)
   
