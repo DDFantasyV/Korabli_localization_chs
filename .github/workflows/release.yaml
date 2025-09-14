@@ -90,6 +90,6 @@ jobs:
         body: ${{ steps.changelog.outputs.notes }}
         files: MK_L10N_CHS.mkmod
         draft: false
-        prerelease: ${{ contains(github.ref, 'public-test') }}
+        prerelease: ${{ steps.branch.outputs.branch == 'public-test' }}
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
