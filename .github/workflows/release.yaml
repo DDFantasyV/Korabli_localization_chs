@@ -2,9 +2,9 @@ name: Auto Release
 
 on:
   push:
-    branches: main
-  pull_request:
     branches: public-test
+  pull_request:
+    branches: main
 
 jobs:
   build-and-release:
