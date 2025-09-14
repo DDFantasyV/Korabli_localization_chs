@@ -20,6 +20,14 @@ jobs:
     - name: Parse changelog and set variables
       id: changelog
       run: |
+        if [ "${{ github.event_name }}" = "push" ]; then
+          BRANCH="${GITHUB_REF#refs/heads/}"
+        else
+          BRANCH="${{ github.event.pull_request.base.ref }}"
+        fi
+        echo "Target branch: $BRANCH"
+        echo "branch=$BRANCH" >> $GITHUB_OUTPUT
+        
         version_line=$(grep -m1 -E "^[0-9]{4}\.[0-9]{2}\.[0-9]{2} for" change.log)
         if [ -z "$version_line" ]; then
           echo "Error: No version line found in change.log"
