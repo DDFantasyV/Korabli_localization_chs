@@ -56,17 +56,8 @@ jobs:
         echo "$notes" >> $GITHUB_OUTPUT
         echo "EOF" >> $GITHUB_OUTPUT
 
-    - name: Create mod package
+    - name: Create mkmod
       run: |
-        mkdir -p gui/fonts texts/ru/LC_MESSAGES
-        
-        [ -f "gui/fonts/SourceHanSansCN_WN_Bold.ttf" ] && cp gui/fonts/SourceHanSansCN_WN_Bold.ttf gui/fonts/
-        [ -f "gui/fonts/SourceHanSansCN_WN_Medium.ttf" ] && cp gui/fonts/SourceHanSansCN_WN_Medium.ttf gui/fonts/
-        [ -f "texts/ru/LC_MESSAGES/global.mo" ] && cp texts/ru/LC_MESSAGES/global.mo texts/ru/LC_MESSAGES/
-        [ -f "change.log" ] && cp change.log .
-        [ -f "LICENSE" ] && cp LICENSE .
-        [ -f "locale_config.xml" ] && cp locale_config.xml .
-        [ -f "meta.xml" ] && cp meta.xml .
         
         zip -0 -r MK_L10N_CHS.mkmod \
           gui/fonts/SourceHanSansCN_WN_Bold.ttf \
