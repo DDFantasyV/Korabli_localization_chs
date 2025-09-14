@@ -26,45 +26,48 @@ jobs:
         else
           BRANCH="${{ github.event.pull_request.base.ref }}"
         fi
+        
         echo "Target branch: $BRANCH"
         echo "branch=$BRANCH" >> $GITHUB_OUTPUT
-
-    - name: Setup Python
-      uses: actions/setup-python@v4
-      with:
-        python-version: '3.x'
 
     - name: Parse changelog and set variables
       id: changelog
       run: |
-        python << EOF
-        import re
-        
-        with open('change.log', 'r', encoding='utf-8') as f:
-            content = f.read()
-        
-        pattern = r'(\d{4}\.\d{2}\.\d{2}) for (.*?) `(v[^`]+)`\s*\n((?:\s*\* .*\n)+)'
-        match = re.search(pattern, content)
-        
-        if match:
-            date, title_part, tag, notes = match.groups()
-            
-            title = title_part.strip()
-            notes = notes.strip().replace('* ', '- ')
-            
-            with open('$GITHUB_OUTPUT', 'a') as f:
-                f.write(f"tag={tag}\n")
-                f.write(f"title={title} {tag}\n")
-                f.write(f"notes<<EOF\n{notes}\nEOF\n")
-            
-            print(f"Extracted tag: {tag}")
-            print(f"Extracted title: {title} {tag}")
-            print("Extracted notes:")
-            print(notes)
-        else:
-            print("Error: Could not parse change.log")
-            exit(1)
-        EOF
+        version_line=$(grep -m1 -E "^[0-9]{4}\.[0-9]{2}\.[0-9]{2} for" change.log)
+        if [ -z "$version_line" ]; then
+          echo "Error: No version line found in change.log"
+          exit 1
+        fi
+        echo "Version line: $version_line"
+
+        tag=$(echo "$version_line" | grep -o '`v[^`]*`' | sed 's/`//g')
+        if [ -z "$tag" ]; then
+          echo "Error: No tag found in version line"
+          exit 1
+        fi
+        echo "Tag: $tag"
+
+        title=$(echo "$version_line" | sed -E 's/^[0-9]{4}\.[0-9]{2}\.[0-9]{2} for (.*) `.*`/\1/')
+        echo "Title: $title"
+
+        notes=$(awk -v version_line="$version_line" '
+          $0 ~ version_line { found=1; next }
+          found && /^[[:space:]]*$/ { exit }
+          found && /^\*/ { print }
+        ' change.log | sed 's/^\* /- /')
+
+        if [ -z "$notes" ]; then
+          echo "Error: No notes found"
+          exit 1
+        fi
+        echo "Notes:"
+        echo "$notes"
+
+        echo "tag=$tag" >> $GITHUB_OUTPUT
+        echo "title=$title $tag" >> $GITHUB_OUTPUT
+        echo "notes<<EOF" >> $GITHUB_OUTPUT
+        echo "$notes" >> $GITHUB_OUTPUT
+        echo "EOF" >> $GITHUB_OUTPUT
 
     - name: Create mkmod
       run: |
@@ -80,12 +83,13 @@ jobs:
 
     - name: Create Release
       if: github.event_name == 'push'
-      uses: ncipollo/release-action@v1
+      uses: softprops/action-gh-release@v1
       with:
-        tag: ${{ steps.changelog.outputs.tag }}
+        tag_name: ${{ steps.changelog.outputs.tag }}
         name: ${{ steps.changelog.outputs.title }}
         body: ${{ steps.changelog.outputs.notes }}
-        artifacts: MK_L10N_CHS.mkmod
+        files: MK_L10N_CHS.mkmod
         draft: false
-        prerelease: ${{ steps.branch.outputs.branch == 'public-test' }}
-        token: ${{ secrets.GITHUB_TOKEN }}
+        prerelease: ${{ contains(github.ref, 'public-test') }}
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
