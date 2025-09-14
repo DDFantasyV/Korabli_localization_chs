@@ -90,6 +90,8 @@ jobs:
         body: ${{ steps.changelog.outputs.notes }}
         files: MK_L10N_CHS.mkmod
         draft: false
+        target_commitish: ${{ steps.branch.outputs.branch }}
+        latest: ${{ steps.branch.outputs.branch == 'main' }}
         prerelease: ${{ steps.branch.outputs.branch == 'public-test' }}
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
