@@ -1,0 +1,76 @@
+name: Auto Release
+
+on:
+  push:
+    branches: main
+  pull_request:
+    branches: public-test
+
+jobs:
+  build-and-release:
+    runs-on: ubuntu-latest
+    if: github.event_name == 'push' || (github.event_name == 'pull_request' && github.event.action == 'closed' && github.event.pull_request.merged == true)
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
+
+    - name: Parse changelog and set variables
+      id: changelog
+      run: |
+        version_section=$(awk '/^[0-9]{4}\.[0-9]{2}\.[0-9]{2} for /,/^[0-9]{4}\.[0-9]{2}\.[0-9]{2} for |^$/' change.log | head -20)
+        
+        version_line=$(echo "$version_section" | grep -E "^[0-9]{4}\.[0-9]{2}\.[0-9]{2} for")
+        
+        tag=$(echo "$version_line" | grep -o '`v[^`]*`' | sed 's/`//g')
+        
+        title=$(echo "$version_line" | sed -E 's/^[0-9]{4}\.[0-9]{2}\.[0-9]{2} for (.*) `.*`/\1/')
+        
+        notes=$(echo "$version_section" | grep -E "^\* " | sed 's/^\* /- /')
+        
+        echo "tag=$tag" >> $GITHUB_OUTPUT
+        echo "title=$title $tag" >> $GITHUB_OUTPUT
+        echo "notes<<EOF" >> $GITHUB_OUTPUT
+        echo "$notes" >> $GITHUB_OUTPUT
+        echo "EOF" >> $GITHUB_OUTPUT
+        
+        echo "Extracted tag: $tag"
+        echo "Extracted title: $title $tag"
+        echo "Extracted notes:"
+        echo "$notes"
+
+    - name: Create mod package
+      run: |
+        mkdir -p gui/fonts texts/ru/LC_MESSAGES
+        
+        [ -f "gui/fonts/SourceHanSansCN_WN_Bold.ttf" ] && cp gui/fonts/SourceHanSansCN_WN_Bold.ttf gui/fonts/
+        [ -f "gui/fonts/SourceHanSansCN_WN_Medium.ttf" ] && cp gui/fonts/SourceHanSansCN_WN_Medium.ttf gui/fonts/
+        [ -f "texts/ru/LC_MESSAGES/global.mo" ] && cp texts/ru/LC_MESSAGES/global.mo texts/ru/LC_MESSAGES/
+        [ -f "change.log" ] && cp change.log .
+        [ -f "LICENSE" ] && cp LICENSE .
+        [ -f "locale_config.xml" ] && cp locale_config.xml .
+        [ -f "meta.xml" ] && cp meta.xml .
+        
+        zip -0 -r MK_L10N_CHS.mkmod \
+          gui/fonts/SourceHanSansCN_WN_Bold.ttf \
+          gui/fonts/SourceHanSansCN_WN_Medium.ttf \
+          texts/ru/LC_MESSAGES/global.mo \
+          change.log \
+          LICENSE \
+          locale_config.xml \
+          meta.xml
+
+    - name: Create Release
+      if: github.event_name == 'push'
+      uses: softprops/action-gh-release@v1
+      with:
+        tag_name: ${{ steps.changelog.outputs.tag }}
+        name: ${{ steps.changelog.outputs.title }}
+        body: ${{ steps.changelog.outputs.notes }}
+        files: MK_L10N_CHS.mkmod
+        draft: false
+        prerelease: ${{ contains(github.ref, 'public-test') }}
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
