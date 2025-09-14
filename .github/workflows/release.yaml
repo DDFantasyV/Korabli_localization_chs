@@ -21,9 +21,9 @@ jobs:
       id: changelog
       run: |
         if [ "${{ github.event_name }}" = "push" ]; then
-          BRANCH="${GITHUB_REF#refs/heads/}"
+          BRANCH="public-test"
         else
-          BRANCH="${{ github.event.pull_request.base.ref }}"
+          BRANCH="main"
         fi
         echo "Target branch: $BRANCH"
         echo "branch=$BRANCH" >> $GITHUB_OUTPUT
