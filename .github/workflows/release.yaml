@@ -20,26 +20,41 @@ jobs:
     - name: Parse changelog and set variables
       id: changelog
       run: |
-        version_section=$(awk '/^[0-9]{4}\.[0-9]{2}\.[0-9]{2} for /,/^[0-9]{4}\.[0-9]{2}\.[0-9]{2} for |^$/' change.log | head -20)
-        
-        version_line=$(echo "$version_section" | grep -E "^[0-9]{4}\.[0-9]{2}\.[0-9]{2} for")
-        
+        version_line=$(grep -m1 -E "^[0-9]{4}\.[0-9]{2}\.[0-9]{2} for" change.log)
+        if [ -z "$version_line" ]; then
+          echo "Error: No version line found in change.log"
+          exit 1
+        fi
+        echo "Version line: $version_line"
+
         tag=$(echo "$version_line" | grep -o '`v[^`]*`' | sed 's/`//g')
-        
+        if [ -z "$tag" ]; then
+          echo "Error: No tag found in version line"
+          exit 1
+        fi
+        echo "Tag: $tag"
+
         title=$(echo "$version_line" | sed -E 's/^[0-9]{4}\.[0-9]{2}\.[0-9]{2} for (.*) `.*`/\1/')
-        
-        notes=$(echo "$version_section" | grep -E "^\* " | sed 's/^\* /- /')
-        
+        echo "Title: $title"
+
+        notes=$(awk -v version_line="$version_line" '
+          $0 ~ version_line { found=1; next }
+          found && /^[[:space:]]*$/ { exit }
+          found && /^\*/ { print }
+        ' change.log | sed 's/^\* /- /')
+
+        if [ -z "$notes" ]; then
+          echo "Error: No notes found"
+          exit 1
+        fi
+        echo "Notes:"
+        echo "$notes"
+
         echo "tag=$tag" >> $GITHUB_OUTPUT
         echo "title=$title $tag" >> $GITHUB_OUTPUT
         echo "notes<<EOF" >> $GITHUB_OUTPUT
         echo "$notes" >> $GITHUB_OUTPUT
         echo "EOF" >> $GITHUB_OUTPUT
-        
-        echo "Extracted tag: $tag"
-        echo "Extracted title: $title $tag"
-        echo "Extracted notes:"
-        echo "$notes"
 
     - name: Create mod package
       run: |
