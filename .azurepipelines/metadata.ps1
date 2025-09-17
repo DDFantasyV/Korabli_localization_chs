@@ -16,6 +16,7 @@ $metadataKey = "$ossBasePath/metadata.json"
 $Headers = @{
     "Accept"             = "application/vnd.github.v3+json"
     "User-Agent"         = "PowerShell"
+    "Authorization"      = "token $env:GITHUB_TOKEN"  # 确保在环境变量中设置了 GITHUB_TOKEN
     "X-GitHub-Api-Version" = "2022-11-28"
 }
 
