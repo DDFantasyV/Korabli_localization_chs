@@ -36,7 +36,7 @@ try {
 Write-Host "Filtering releases for asset '$assetName' and keeping only the latest..."
 
 $allFilteredReleases = $allReleases | Where-Object {
-    $_.assets | Where-Object { $_.name -eq $assetName }
+    $_.assets | Where-Object { $_.name -contains $assetName }
 }
 
 if (-not $allFilteredReleases) {
@@ -59,7 +59,6 @@ if (-not $releasesToKeep) {
 ## 步骤3: 处理并镜像最新的资产
 # ---
 $processedMetadata = [array]@()
-$releasesToKeepIds = $releasesToKeep.id
 $tempDir = New-Item -ItemType Directory -Path (New-Guid).Guid -Force | Select-Object -ExpandProperty FullName
 
 try {
@@ -67,52 +66,62 @@ try {
 
     foreach ($release in $releasesToKeep) {
         $releaseId = $release.id
-        $asset = $release.assets | Where-Object { $_.name -eq $assetName }
-        $assetDownloadUrl = $asset.browser_download_url
-        $ossObjectKey = "$ossBasePath/$releaseId/$assetName"
-        $localFilePath = Join-Path -Path $tempDir -ChildPath "$releaseId-$assetName"
-
-        Write-Host "Processing release `"$($release.tag_name)`"..."
-
-        # 增量镜像：检查 OSS 上文件是否存在
-        try {
-            ossutil stat oss://$ossBucketName/$ossObjectKey 2>$null
-            if ($LASTEXITCODE -eq 0) {
-                Write-Host "`tAsset '$assetName' already exists in OSS. Skipping download."
-            } else {
-                Write-Host "`tAsset not found in OSS. Downloading from GitHub..."
-                Invoke-WebRequest -Uri $assetDownloadUrl -OutFile $localFilePath -Headers $Headers
-
-                Write-Host "`tUploading to OSS at oss://$ossBucketName/$ossObjectKey..."
-                ossutil cp $localFilePath oss://$ossBucketName/$ossObjectKey
-                
-                Remove-Item $localFilePath -Force
-            }
-        } catch {
-            Write-Error "`tAn error occurred during asset mirroring: $_"
-        }
-
-        # 修改元数据中的 Asset 地址并构建新的 metadata
-        $modifiedAsset = @{
-            browser_download_url = "$ossDownloadUrlBase/$releaseId/$assetName"
-            name = $asset.name
-            tag_name = $release.tag_name
-        }
         
+        # 针对单一 Release 遍历其所有符合条件的 Asset
+        $assetsToProcess = $release.assets | Where-Object { $_.name -contains $assetName }
+        $modifiedAssetsForRelease = [array]@() # 用于保存该 Release 的所有修改后 Asset
+        
+        Write-Host "Processing release `"$($release.tag_name)`" with $($assetsToProcess.Count) asset(s)..."
+
+        foreach ($asset in $assetsToProcess) {
+            $assetDownloadUrl = $asset.browser_download_url
+            
+            # 使用 Asset ID 来确保唯一性，因为文件名可能相同
+            $ossObjectKey = "$ossBasePath/$releaseId/$($asset.name)"
+            $localFilePath = Join-Path -Path $tempDir -ChildPath "$releaseId-$($asset.name)"
+
+            # 增量镜像：检查 OSS 上文件是否存在
+            try {
+                ossutil stat oss://$ossBucketName/$ossObjectKey 2>$null
+                if ($LASTEXITCODE -eq 0) {
+                    Write-Host "`tAsset '$($asset.name)' already exists in OSS. Skipping download."
+                } else {
+                    Write-Host "`tAsset not found in OSS. Downloading from GitHub..."
+                    Invoke-WebRequest -Uri $assetDownloadUrl -OutFile $localFilePath -Headers $Headers
+
+                    Write-Host "`tUploading to OSS at oss://$ossBucketName/$ossObjectKey..."
+                    ossutil cp $localFilePath oss://$ossBucketName/$ossObjectKey
+                    
+                    Remove-Item $localFilePath -Force
+                }
+            } catch {
+                Write-Error "`tAn error occurred during asset mirroring: $_"
+            }
+
+            # 修改元数据中的 Asset 地址
+            $modifiedAsset = @{
+                browser_download_url = "$ossDownloadUrlBase/$releaseId/$($asset.name)"
+                name = $asset.name
+                tag_name = $release.tag_name # 方便调试
+            }
+            $modifiedAssetsForRelease += $modifiedAsset
+        } # end foreach asset
+        
+        # 构造用于上传的优化元数据对象，assets 字段为数组
         $optimizedRelease = @{
             name = $release.name
             tag_name = $release.tag_name
             prerelease = $release.prerelease
             published_at = $release.published_at
-            assets = [array]@($modifiedAsset)
+            assets = @($modifiedAssetsForRelease)
         }
         $processedMetadata += $optimizedRelease
-    }
+    } # end foreach release
 
     # ---
     ## 步骤4: 上传最新的元数据
     # ---
-    $modifiedMetadataJson = ConvertTo-Json -Depth 10 -Compress @($processedMetadata)
+    $modifiedMetadataJson = @($processedMetadata) | ConvertTo-Json -Depth 10 -Compress
     $metadataFile = Join-Path -Path $tempDir -ChildPath "metadata.json"
     $modifiedMetadataJson | Out-File -Path $metadataFile -Encoding utf8
 
@@ -125,18 +134,27 @@ try {
     Write-Host "Checking for old assets to clean up..."
 
     # 获取 OSS 上所有符合路径模式的资产列表
-    $allOssAssets = ossutil ls -s oss://$ossBucketName/$ossBasePath/ 2>&1 | Select-String -Pattern "$ossBasePath/\d+/$assetName"
+    $allOssAssets = ossutil ls -s oss://$ossBucketName/$ossBasePath/ 2>&1 | Select-String -Pattern "$ossBasePath/\d+/\d+/$assetName"
     
+    # 构建一个需要保留的完整键（key）集合，以便快速查找
+    $keysToKeep = $null
+    $keysToKeep = $processedMetadata | ForEach-Object {
+        $release = $_
+        $release.assets | ForEach-Object {
+            $asset = $_
+            $key = ($asset.browser_download_url -split '.com/')[1] # 从 URL 提取 key
+            $key
+        }
+    }
+
     if ($allOssAssets) {
         foreach ($ossAsset in $allOssAssets) {
-            # 从 ossutil ls 的输出中提取 key
             $ossAssetKey = ($ossAsset.Line -split '\s+')[2]
-            $ossAssetId = ($ossAssetKey -split '/')[2]
-
-            # 如果这个资产的 ID 不在需要保留的列表中，则删除它
-            if ($ossAssetId -notin $releasesToKeepIds) {
+            
+            # 如果这个资产的 Key 不在需要保留的列表中，则删除它
+            if ($ossAssetKey -notin $keysToKeep) {
                 Write-Host "`tDeleting old asset: $ossAssetKey"
-                ossutil rm oss://$ossBucketName/$ossAssetKey --force
+                ossutil rm oss://$ossBucketName/$ossAssetKey
             }
         }
     }
