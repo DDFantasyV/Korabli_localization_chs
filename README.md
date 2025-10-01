@@ -8,6 +8,7 @@
 - [Kuonji_Alice_My_Waifu](https://forum.korabli.su/profile/211796407-kuonji_alice_my_waifu/)
 - [M_Function](https://forum.korabli.su/profile/210475943-m_function/)
 - [nian__gao233](https://forum.korabli.su/profile/209831391-nian__gao233/)
+- [walksQAQ](https://forum.korabli.su/profile/209582709-walksqaq/)
 
 > **此项目根据 *Apache License 2.0* 开源，仅用于学习交流，请勿用于非法用途。**
 
@@ -93,7 +94,7 @@
 - [x] 安装测试（PT）服汉化
 - [x] 自动识别游戏目录
 - [x] 自动更新
-- [ ] 国内镜像源
+- [x] 国内镜像源
 
 ## 友情链接
 - [猫叔UoCat](https://space.bilibili.com/10604786)
