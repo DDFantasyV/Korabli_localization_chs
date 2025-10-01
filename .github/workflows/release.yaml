@@ -4,13 +4,11 @@ on:
   push:
     branches: public-test
   pull_request:
-    branches: dev
+    branches: main
 
 jobs:
   build-and-release:
     runs-on: ubuntu-latest
-    if: github.event_name == 'push' || (github.event_name == 'pull_request' && github.event.action == 'closed' && github.event.pull_request.merged == true)
-
     steps:
     - name: Checkout code
       uses: actions/checkout@v4
@@ -71,7 +69,6 @@ jobs:
 
     - name: Create mkmod
       run: |
-        
         zip -0 -r MK_L10N_CHS.mkmod \
           gui/fonts/SourceHanSansCN_WN_Bold.ttf \
           gui/fonts/SourceHanSansCN_WN_Medium.ttf \
@@ -82,7 +79,6 @@ jobs:
           meta.xml
 
     - name: Create Release
-      if: github.event_name == 'push' || (github.event_name == 'pull_request' && github.event.action == 'closed' && github.event.pull_request.merged == true)
       uses: softprops/action-gh-release@v1
       with:
         tag_name: ${{ steps.changelog.outputs.tag }}
