@@ -7,7 +7,7 @@
 $GitHubApiUrl = "https://api.github.com/repos/DDFantasyV/Korabli_localization_chs/releases"
 $assetName = "MK_L10N_CHS.mkmod"
 $ossBucketName = "mk-localization-chs"
-$ossEndpoint = "oss-cn-wulanchabu.aliyuncs.com"
+$ossEndpoint = "oss-accelerate.aliyuncs.com"
 $ossBasePath = "mods/chs"
 $ossDownloadUrlBase = "https://$ossBucketName.$ossEndpoint/$ossBasePath"
 $metadataKey = "$ossBasePath/metadata.json"
