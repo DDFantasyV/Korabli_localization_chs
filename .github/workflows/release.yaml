@@ -5,6 +5,7 @@ on:
     branches: public-test
   pull_request:
     branches: main
+    types: closed
 
 jobs:
   build-and-release:
