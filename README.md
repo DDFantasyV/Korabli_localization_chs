@@ -101,7 +101,6 @@
 - [浩舰](https://iwarship.net/)
 - [«Мир кораблей»](https://korabli.su/)及[论坛](https://forum.korabli.su/)
 
-
 ## 常见问题
 >在提出任何问题之前，请确保已经阅读过了[提问的智慧](https://github.com/ryanhanwu/How-To-Ask-Questions-The-Smart-Way/blob/main/README-zh_CN.md)。
 
