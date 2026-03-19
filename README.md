@@ -1,16 +1,11 @@
 # «Мир кораблей» 中文本地化（汉化）
 
+> **此项目根据 *Apache License 2.0* 开源，仅用于学习交流，请勿用于非法用途。**
+
 ![GitHub License](https://img.shields.io/github/license/DDFantasyV/Korabli_localization_chs)
 ![GitHub Downloads (all assets, all releases)](https://img.shields.io/github/downloads/DDFantasyV/Korabli_localization_chs/total)
 
-## 现开发者名单
-- [DDF_FantasyV](https://forum.korabli.su/profile/162368669-ddf_fantasyv/)
-- [Kuonji_Alice_My_Waifu](https://forum.korabli.su/profile/211796407-kuonji_alice_my_waifu/)
-- [M_Function](https://forum.korabli.su/profile/210475943-m_function/)
-- [nian__gao233](https://forum.korabli.su/profile/209831391-nian__gao233/)
-- [walksQAQ](https://forum.korabli.su/profile/209582709-walksqaq/)
-
-> **此项目根据 *Apache License 2.0* 开源，仅用于学习交流，请勿用于非法用途。**
+此本地化模组可将游戏界面的显示语言修改为简体中文。安装自动安装器即可完成一键汉化。
 
 ## 下载链接
 点击下方蓝链以下载自动安装器：
@@ -21,9 +16,35 @@
 > REPAD汉化群 791861571<br>
 > REPAD莱斯塔交流群 980788898
 
-## 模组简介
-此本地化模组可将游戏界面的显示语言修改为简体中文。安装自动安装器即可完成一键汉化。
+## 现开发者名单
+- [DDF_FantasyV](https://forum.korabli.su/profile/162368669-ddf_fantasyv/)
+- [Kuonji_Alice_My_Waifu](https://forum.korabli.su/profile/211796407-kuonji_alice_my_waifu/)
+- [M_Function](https://forum.korabli.su/profile/210475943-m_function/)
+- [nian__gao233](https://forum.korabli.su/profile/209831391-nian__gao233/)
 
+> 感谢以下玩家为本项目提供的帮助与支持（按ID排序）：<br>
+> 2ndAngel_Lilith<br>
+> Appetite4Devastation<br>
+> BattleFrame<br>
+> Cheval_Grand<br>
+> CRYCHIC_mutsumi_<br>
+> Hakuryu_my_Waifu<br>
+> Iowa_Battleship<br>
+> KitasanBlackG1<br>
+> Kokoro_Never_Smiles<br>
+> Lucky_Yukikaze<br>
+> MisaQrua<br>
+> Mochidzuki<br>
+> Neko_77_Lovely<br>
+> NiceNature3rd<br>
+> Nukumizu_Kaju<br>
+> Sympathy_nanoda<br>
+> uocat<br>
+> USS_SS212_Gato<br>
+> walksQAQ<br>
+> yep_yYY<br>
+
+## 模组简介
 模组支持正式服以及PT服以下内容的汉化:
 - 港口、战斗、作战任务界面
 - 科技树及舰船描述
